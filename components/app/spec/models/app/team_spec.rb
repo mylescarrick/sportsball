@@ -1,3 +1,3 @@
-RSpec.describe App::Team do
+RSpec.describe App::Team, :type => :model do
   it { should validate_presence_of(:name) }
 end

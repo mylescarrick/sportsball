@@ -1,13 +1,12 @@
 ENV["RAILS_ENV"] ||= 'test'
 
-require File.expand_path("../dummy/config/environment", __FILE__)
+require_relative "../config/environment"
 
 require 'rspec/rails'
-require 'shoulda/matchers'
-require 'database_cleaner'
 require 'capybara/rails'
 require 'capybara/rspec'
-require 'ostruct'
+require 'rails-controller-testing'
+require 'shoulda/matchers'
 
 Dir[App::Engine.root.join("spec/support/**/*.rb")].each {|f| require f}
 
@@ -24,17 +23,11 @@ RSpec.configure do |config|
   config.profile_examples = nil
   config.order = :random
   Kernel.srand config.seed
+end
 
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
   end
-
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
-  end
-
-  config.include ObjectCreationMethods
 end

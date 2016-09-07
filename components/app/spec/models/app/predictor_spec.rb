@@ -1,4 +1,4 @@
-RSpec.describe App::Predictor do
+RSpec.describe App::Predictor, :type => :model do
   before do
     @team1 = create_team name: "A"
     @team2 = create_team name: "B"

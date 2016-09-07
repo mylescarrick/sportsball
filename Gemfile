@@ -19,6 +19,8 @@ group :development, :test do
   gem 'sqlite3'
   gem 'spring'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers', :require => false
   gem 'capybara'
 end
 
