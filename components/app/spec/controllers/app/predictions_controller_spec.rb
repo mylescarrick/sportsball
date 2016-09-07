@@ -8,7 +8,7 @@ RSpec.describe App::PredictionsController, :type => :controller do
 
   describe "GET new" do
     it "assigns all teams as @teams" do
-      get :new, {}, {}
+      get :new, params: {}, session: {}
       expect(assigns(:teams)).to eq([@team1, @team2])
     end
   end
@@ -16,8 +16,8 @@ RSpec.describe App::PredictionsController, :type => :controller do
   describe "POST create" do
     it "assigns a prediction as @prediction" do
       post :create,
-           {first_team: {id: @team1.id}, second_team: {id: @team2.id}},
-           {}
+           params: {first_team: {id: @team1.id}, second_team: {id: @team2.id}},
+           session: {}
 
       prediction = assigns(:prediction)
       expect(prediction).to be_a(Predictor::Prediction)
