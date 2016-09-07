@@ -6,13 +6,15 @@ GIT
     trueskill (1.0.0)
 
 PATH
-  remote: components/app
+  remote: components
   specs:
     app (0.0.1)
       jquery-rails (= 4.2.1)
+      predictor
       rails (= 5.0.0.1)
       rails-controller-testing
       slim-rails (= 3.1.1)
+    predictor (0.1.0)
       trueskill
 
 GEM
@@ -207,6 +209,7 @@ DEPENDENCIES
   jbuilder (~> 2.6)
   jquery-rails
   pg
+  predictor!
   puma
   rails (= 5.0.0.1)
   rails-controller-testing

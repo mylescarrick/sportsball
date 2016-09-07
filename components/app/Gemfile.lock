@@ -1,19 +1,18 @@
-GIT
-  remote: https://github.com/benjaminleesmith/trueskill
-  revision: e404f45af5b3fb86982881ce064a9c764cc6a901
-  ref: e404f45af5b3fb86982881ce064a9c764cc6a901
+PATH
+  remote: ..
   specs:
-    trueskill (1.0.0)
+    predictor (0.1.0)
+      trueskill
 
 PATH
   remote: .
   specs:
     app (0.0.1)
       jquery-rails (= 4.2.1)
+      predictor
       rails (= 5.0.0.1)
       rails-controller-testing
       slim-rails (= 3.1.1)
-      trueskill
 
 GEM
   remote: https://rubygems.org/
@@ -160,6 +159,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
+    trueskill (1.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     websocket-driver (0.6.4)
@@ -175,11 +175,11 @@ DEPENDENCIES
   app!
   capybara
   database_cleaner
+  predictor!
   rails-controller-testing
   rspec-rails
   shoulda-matchers
   sqlite3
-  trueskill!
 
 BUNDLED WITH
    1.12.5
